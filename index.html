@@ -129,11 +129,56 @@
     <h2>Contáctanos 📩</h2>
     <p>
       ¿Tienes dudas, curiosidad o simplemente quieres saludarnos?  
-      Encuéntranos en redes o mándanos un mensaje picante, pero con respeto. 😉<!-- BOTÓN PARA ABRIR EL DIÁLOGO -->
+      Encuéntranos en redes o mándanos un mensaje picante, pero con respeto. 😉
+</button><!-- BOTÓN PARA ABRIR EL DIÁLOGO -->
 <button onclick="document.getElementById('feedbackModal').style.display='block'"
         style="position:fixed; bottom:20px; right:20px; background:#000; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; z-index:1000;">
   ¿Tienes algo que decir?
 </button>
+
+<!-- MODAL -->
+<div id="feedbackModal" style="display:none; position:fixed; z-index:1001; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7);">
+  <div style="background-color:#fff; margin:10% auto; padding:20px; border-radius:10px; width:90%; max-width:500px; position:relative;">
+    <span onclick="document.getElementById('feedbackModal').style.display='none'" 
+          style="position:absolute; top:10px; right:20px; font-size:20px; cursor:pointer;">&times;</span>
+    
+    <h2 style="margin-top:0;">Cuéntanos lo que piensas</h2>
+    <p style="font-size:0.95em; color:#555;">¿Comentario, réplica, pregunta hot o tema incómodo? Suéltalo aquí 👇</p>
+    
+    <form onsubmit="submitFeedback(event)">
+      <textarea id="feedbackText" placeholder="Escribe aquí tu mensaje..." required
+                style="width:100%; height:120px; padding:10px; border-radius:8px; border:1px solid #ccc; resize:vertical;"></textarea>
+      <br><br>
+      <button type="submit" style="background:#000; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
+        Enviar
+      </button>
+    </form>
+    
+    <p id="feedbackMessage" style="color:green; margin-top:15px;"></p>
+  </div>
+</div>
+
+<!-- SCRIPT BÁSICO PARA MANEJAR ENVÍO -->
+<script>
+  function submitFeedback(event) {
+    event.preventDefault();
+    const text = document.getElementById("feedbackText").value;
+    
+    // Aquí puedes conectarlo a backend, Google Sheets o lo que sea.
+    console.log("Mensaje enviado:", text); // Simulación por ahora
+
+    // Feedback visual
+    document.getElementById("feedbackMessage").innerText = "¡Gracias por tu mensaje!";
+    document.getElementById("feedbackText").value = "";
+
+    // Cierra el modal después de 2.5 segundos
+    setTimeout(() => {
+      document.getElementById('feedbackModal').style.display = 'none';
+      document.getElementById("feedbackMessage").innerText = "";
+    }, 2500);
+  }
+</script>
+
       
     </p>
     <p>📧 Email: marcoantonio@6topodcast.com, luzsexcita@6topodcast.com</p>

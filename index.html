@@ -190,4 +190,30 @@
   </footer>
 
 </body>
-</html>
+</html><!-- BOTÓN FLOTANTE OCULTO INICIALMENTE -->
+<button id="floatingBtn" onclick="document.getElementById('feedbackModal').style.display='block'"
+        style="display:none; position:fixed; bottom:20px; right:20px; background:#000; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; z-index:1000; opacity:0; transition:opacity 0.5s ease, transform 0.5s ease; transform: translateY(20px);">
+  ¿Tienes algo que decir?
+</button>
+
+<!-- SCRIPT PARA ANIMACIÓN TIPO TIKTOK -->
+<script>
+  const floatingBtn = document.getElementById('floatingBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      floatingBtn.style.display = 'block';
+      setTimeout(() => {
+        floatingBtn.style.opacity = '1';
+        floatingBtn.style.transform = 'translateY(0)';
+      }, 50);
+    } else {
+      floatingBtn.style.opacity = '0';
+      floatingBtn.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        floatingBtn.style.display = 'none';
+      }, 500);
+    }
+  });
+</script>
+

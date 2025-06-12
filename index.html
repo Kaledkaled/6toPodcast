@@ -61,11 +61,14 @@
     footer {
       text-align: center;
       padding: 10px;
-      background-color: #333;
+      background-color: rgba(51, 51, 51, 0.8); /* semitransparente */
+      backdrop-filter: blur(5px); /* efecto blur */
       color: white;
       position: fixed;
       width: 100%;
       bottom: 0;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
     }
 
     video {
@@ -77,7 +80,7 @@
 
     .floating-button {
       position: fixed;
-      bottom: 20px;
+      bottom: 60px; /* para que no tape el footer */
       right: 20px;
       background: #000;
       color: #fff;
@@ -85,13 +88,13 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      z-index: 1000;
+      z-index: 1001;
     }
 
     #feedbackModal {
       display: none;
       position: fixed;
-      z-index: 1001;
+      z-index: 1002;
       left: 0;
       top: 0;
       width: 100%;
@@ -117,30 +120,6 @@
       border-radius: 8px;
       border: 1px solid #ccc;
       resize: vertical;
-    }
-
-    /* Nuevo layout para sección About */
-    .about-container {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-    }
-
-    .about-text {
-      flex: 1 1 400px;
-      min-width: 300px;
-      text-align: justify;
-    }
-
-    .about-video {
-      flex: 0 0 400px;
-    }
-
-    .video-banner {
-      width: 100%;
-      height: 250px;
-      border-radius: 8px;
     }
   </style>
 </head>
@@ -169,21 +148,11 @@
 
   <div class="main-content" id="about">
     <h2>Sobre Nosotros 💞</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>Somos Luz y Marco — también conocidos como <strong>swinGDLers</strong> 😉. En este espacio compartimos experiencias, risas y verdades desde la piel, el corazón y la cama (emocional y literal).</p>
-        <p>Nos mueve el deseo de contribuir a una sociedad más abierta, sincera y empática, sin moralinas ni hipocresías. Y sí, si creemos en el amor libre, pero con compromiso, complicidad y consentimiento.</p>
-      </div>
-      <div class="about-video">
-        <iframe
-          class="video-banner"
-          src="https://www.youtube.com/embed/eYpUAdL_vrw"
-          title="Luz y Marcos (swinGDLers)"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
+    <p>Somos Luz y Marco — también conocidos como <strong>swinGDLers</strong> 😉. En este espacio compartimos experiencias, risas y verdades desde la piel, el corazón y la cama (emocional y literal).</p>
+    <p>Nos mueve el deseo de contribuir a una sociedad más abierta, sincera y empática, sin moralinas ni hipocresías. Y sí, si creemos en el amor libre, pero con compromiso, complicidad y consentimiento.</p>
+
+    <div>
+      <iframe width="337" height="599" src="https://www.youtube.com/embed/eYpUAdL_vrw" title="Luz y Marcos (swinGDLers)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 

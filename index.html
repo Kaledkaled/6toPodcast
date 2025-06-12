@@ -32,6 +32,7 @@
 
     .main-content {
       padding: 30px;
+      padding-bottom: 80px; /* espacio extra para el footer fijo */
       background-color: white;
       margin: 20px auto;
       width: 80%;
@@ -59,15 +60,16 @@
     }
 
     footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(51, 51, 51, 0.8);
+      color: white;
       text-align: center;
       padding: 10px;
-      background-color: rgba(51, 51, 51, 0.8); /* semitransparente */
-      backdrop-filter: blur(5px); /* efecto blur */
-      color: white;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      transition: background-color 0.3s ease;
+      font-weight: 400;
+      font-size: 0.9em;
+      backdrop-filter: blur(5px);
       z-index: 1000;
     }
 
@@ -80,7 +82,7 @@
 
     .floating-button {
       position: fixed;
-      bottom: 60px; /* para que no tape el footer */
+      bottom: 20px;
       right: 20px;
       background: #000;
       color: #fff;
@@ -88,13 +90,13 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      z-index: 1001;
+      z-index: 1001; /* encima del footer */
     }
 
     #feedbackModal {
       display: none;
       position: fixed;
-      z-index: 1002;
+      z-index: 1002; /* encima de todo */
       left: 0;
       top: 0;
       width: 100%;
@@ -182,7 +184,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 6toPodcast by swinGDLers. Todos los derechos reservados.</p>
+    <p>© 2025 6toPodcast by swinGDLers. Todos los derechos reservados.</p>
   </footer>
 
   <script>
@@ -202,3 +204,4 @@
   </script>
 </body>
 </html>
+

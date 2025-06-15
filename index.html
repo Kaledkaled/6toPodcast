@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <!-- Fuentes elegantes y provocadoras -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="google-site-verification" content="rMlfI-6RUwR263pfKLdmArh4biCtQpdsSGUCIs_bpys" />
   <title>6toPodcast</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       margin: 0;
       padding: 0;
       background-color: #596cf7;
@@ -20,6 +19,7 @@
       color: white;
       padding: 20px 0;
       text-align: center;
+      font-family: 'Lora', serif;
     }
 
     nav a {
@@ -34,14 +34,18 @@
 
     .main-content {
       padding: 30px;
-      padding-bottom: 80px; /* espacio extra para el footer fijo */
-      background-color: white;
+      padding-bottom: 80px;
+      background-image: url("./Captura%20de%20pantalla%202025-06-15%20095446.png");
+      background-size: cover;
+      background-position: center;
       margin: 20px auto;
       width: 80%;
       max-width: 1200px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       text-align: justify;
+      color: #1a1a1a;
+      backdrop-filter: brightness(0.95);
     }
 
     .acast-button {
@@ -92,13 +96,13 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      z-index: 1001; /* encima del footer */
+      z-index: 1001;
     }
 
     #feedbackModal {
       display: none;
       position: fixed;
-      z-index: 1002; /* encima de todo */
+      z-index: 1002;
       left: 0;
       top: 0;
       width: 100%;
@@ -128,7 +132,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Bienvenido al 🔥 6to Podcast 🔥</h1>
     <nav>
@@ -168,7 +171,6 @@
 
   <button class="floating-button" onclick="document.getElementById('feedbackModal').style.display='block'">¿Tienes algo que decir?</button>
 
-  <!-- MODAL -->
   <div id="feedbackModal">
     <div id="feedbackModalContent">
       <span onclick="document.getElementById('feedbackModal').style.display='none'" style="position:absolute; top:10px; right:20px; font-size:20px; cursor:pointer;">&times;</span>
@@ -177,9 +179,7 @@
       <form onsubmit="submitFeedback(event)">
         <textarea id="feedbackText" placeholder="Escribe aquí tu mensaje..." required></textarea>
         <br><br>
-        <button type="submit" style="background:#000; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
-          Enviar
-        </button>
+        <button type="submit" style="background:#000; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
         <p id="feedbackMessage" style="color:green; margin-top:15px;"></p>
       </form>
     </div>
@@ -193,7 +193,7 @@
     function submitFeedback(event) {
       event.preventDefault();
       const text = document.getElementById("feedbackText").value;
-      console.log("Mensaje enviado:", text); // Aquí puedes conectar backend o Google Sheets
+      console.log("Mensaje enviado:", text);
 
       document.getElementById("feedbackMessage").innerText = "¡Gracias por tu mensaje!";
       document.getElementById("feedbackText").value = "";

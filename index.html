@@ -2,25 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="rMlfI-6RUwR263pfKLdmArh4biCtQpdsSGUCIs_bpys" />
   <title>6toPodcast</title>
   <style>
     body {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #fff;
+      background-color: #f4f4f4;
     }
 
     header {
-      background-color: #ed1414;
+      background-color: #333;
       color: white;
       padding: 20px 0;
       text-align: center;
-      font-family: 'Lora', serif;
     }
 
     nav a {
@@ -34,42 +30,18 @@
     }
 
     .main-content {
-      position: relative;
       padding: 30px;
-      padding-bottom: 80px;
-      background-image: url("Captura%20de%20pantalla%202025-06-15%20095446.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-color: white;
       margin: 20px auto;
       width: 80%;
       max-width: 1200px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: justify;
-      color: #ffffff;
-      z-index: 1;
-    }
-
-    .main-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.65);
-      border-radius: 8px;
-      z-index: 0;
-    }
-
-    .main-content * {
-      position: relative;
-      z-index: 1;
     }
 
     .acast-button {
-      background-color: #ff6a00;
+      background-color: #ff6a00; /* Color naranja Acast */
       color: white;
       border: none;
       padding: 12px 24px;
@@ -86,17 +58,13 @@
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(51, 51, 51, 0.8);
-      color: white;
       text-align: center;
       padding: 10px;
-      font-weight: 400;
-      font-size: 0.9em;
-      backdrop-filter: blur(5px);
-      z-index: 1000;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
     }
 
     video {
@@ -105,56 +73,72 @@
       margin-top: 20px;
       border-radius: 8px;
     }
-
-    .floating-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #000;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    #feedbackModal {
-      display: none;
-      position: fixed;
-      z-index: 1002;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    #feedbackModalContent {
-      background-color: #111;
-      color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      position: relative;
-    }
-
-    #feedbackModalContent textarea {
-      width: 100%;
-      height: 120px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #444;
-      resize: vertical;
-      background-color: #222;
-      color: #fff;
-    }
   </style>
 </head>
 <body>
-  <!-- HTML content intact -->
+
+  <!-- CABECERA -->
+  <header>
+    <h1>Bienvenido al 🔥 6to Podcast 🔥</h1>
+    <nav>
+      <a href="#home">Inicio</a>
+      <a href="#about">Nosotros</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- INICIO -->
+  <div class="main-content" id="home">
+    <h2>¿Qué es 6toPodcast? 🎙️</h2>
+    <p>
+      El 6to Podcast es tu espacio íntimo... donde exploramos sin miedo ni filtros el universo del estilo de vida <strong>liberal y swinger</strong> en Guadalajara.
+    </p>
+    <p>
+      Aquí no hay etiquetas, solo deseo, verdad, y complicidad. Queremos ayudarte a desmitificar, reír, aprender y gozar lo que muchas parejas ya viven en silencio. 
+    </p>
+    <p>
+      💫 Nuestro objetivo: demostrar que el amor puede ser más sólido y duradero... incluso cuando se vive fuera del molde.
+    </p>
+    <p>
+      🎧 Escúchanos y acompáñanos episodio tras episodio...
+    </p>
+
+    <a href="https://shows.acast.com/swingdlers" target="_blank">
+      <button class="acast-button">🎧 Escúchanos en Acast Podcast</button>
+    </a>
+  </div>
+
+  <!-- NOSOTROS -->
+  <div class="main-content" id="about">
+    <h2>Sobre Nosotros 💞</h2>
+    <p>
+      Somos Luz y Marco — también conocidos como <strong>swinGDLers</strong> 😉.  
+      En este espacio compartimos experiencias, risas y verdades desde la piel, el corazón y la cama (emocional y literal).
+    </p>
+    <p>
+      Nos mueve el deseo de contribuir a una sociedad más abierta, sincera y empática, sin moralinas ni hipocresías.  
+      Y sí, creemos en el amor libre, pero con compromiso, complicidad y consentimiento.
+    </p>
+
+    <!-- VIDEO INSERTADO -->
+    <video src="https://youtube.com/shorts/eYpUAdL_vrw" autoplay loop controls></video>
+    <!-- Reemplaza "tu-video.mp4" con la URL o ruta del video -->
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="main-content" id="contact">
+    <h2>Contáctanos 📩</h2>
+    <p>
+      ¿Tienes dudas, curiosidad o simplemente quieres saludarnos?  
+      Encuéntranos en redes o mándanos un mensaje picante, pero con respeto. 😉
+    </p>
+    <p>📧 Email: marcoantonio@6topodcast.com, luzsexcita@6topodcast.com</p>
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 6toPodcast by swinGDLers. Todos los derechos reservados.</p>
+  </footer>
+
 </body>
 </html>
